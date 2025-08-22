@@ -62,6 +62,15 @@ export function Header({ currentPage, onNavigate, searchTerm, onSearchChange }: 
               Produtos
             </button>
 
+            <button
+              onClick={() => onNavigate('exchange')}
+              className={`text-sm font-medium transition-colors ${
+                currentPage === 'exchange' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              Trocas
+            </button>
+
             <button className="text-gray-700 hover:text-red-500 transition-colors">
               <Heart className="w-5 h-5" />
             </button>
@@ -157,6 +166,20 @@ export function Header({ currentPage, onNavigate, searchTerm, onSearchChange }: 
               }`}
             >
               Produtos
+            </button>
+
+            <button
+              onClick={() => {
+                onNavigate('exchange');
+                setIsMenuOpen(false);
+              }}
+              className={`block w-full text-left py-2 px-3 rounded-md text-sm font-medium ${
+                currentPage === 'exchange'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+              }`}
+            >
+              Trocas
             </button>
 
             <button

@@ -8,10 +8,11 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CartPage } from './pages/CartPage';
 import { LoginPage } from './pages/LoginPage';
 import { CheckoutPage } from './pages/CheckoutPage';
+import { ExchangePage } from './pages/ExchangePage';
 import { products } from './data/products';
 import { Product } from './types';
 
-type Page = 'home' | 'products' | 'product-detail' | 'cart' | 'login' | 'checkout';
+type Page = 'home' | 'products' | 'product-detail' | 'cart' | 'login' | 'checkout' | 'exchange';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -48,7 +49,7 @@ function AppContent() {
   const handleBackNavigation = () => {
     if (currentPage === 'product-detail') {
       setCurrentPage('products');
-    } else if (currentPage === 'cart' || currentPage === 'login' || currentPage === 'checkout') {
+    } else if (currentPage === 'cart' || currentPage === 'login' || currentPage === 'checkout' || currentPage === 'exchange') {
       setCurrentPage('home');
     }
   };
@@ -95,6 +96,8 @@ function AppContent() {
             onNavigate={handleNavigate}
           />
         );
+      case 'exchange':
+        return <ExchangePage onBack={handleBackNavigation} />;
       default:
         return null;
     }
@@ -144,7 +147,14 @@ function AppContent() {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>Central de Ajuda</li>
                 <li>Fale Conosco</li>
-                <li>Política de Trocas</li>
+                <li>
+                  <button
+                    onClick={() => handleNavigate('exchange')}
+                    className="hover:underline"
+                  >
+                    Política de Trocas
+                  </button>
+                </li>
                 <li>Entrega</li>
               </ul>
             </div>
