@@ -6,7 +6,8 @@
     "deploymentEnabled": {
       "main": true,
       "feature/*": true,
-      "hotfix/*": true
+      "hotfix/*": true,
+      "codex/*": true
     }
   },
   "rewrites": [
