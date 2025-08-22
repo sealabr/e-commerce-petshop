@@ -17,7 +17,7 @@ export function HomePage({ featuredProducts, onProductClick, onNavigate }: HomeP
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Tudo para o seu Pet
+              Tudo para o seu Pet!!!!!! ????????
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Os melhores produtos com preços incríveis
