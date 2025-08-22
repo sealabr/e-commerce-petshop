@@ -10,6 +10,10 @@
       "codex/*": true
     }
   },
+  "github": {
+    "comment": true,
+    "silent": false
+  },
   "rewrites": [
     {
       "source": "/(.*)",
