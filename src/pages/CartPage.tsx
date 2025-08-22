@@ -27,7 +27,7 @@ export function CartPage({ onBack, onNavigate }: CartPageProps) {
 
         <div className="text-center py-12">
           <div className="text-6xl mb-4">🛒</div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Seu carrinho está vazio</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Seu carrinho está vazio????</h2>
           <p className="text-gray-600 mb-8">Adicione produtos ao seu carrinho para continuar</p>
           <button
             onClick={() => onNavigate('products')}
