@@ -8,10 +8,11 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CartPage } from './pages/CartPage';
 import { LoginPage } from './pages/LoginPage';
 import { CheckoutPage } from './pages/CheckoutPage';
+import { ContactPage } from './pages/ContactPage';
 import { products } from './data/products';
 import { Product } from './types';
 
-type Page = 'home' | 'products' | 'product-detail' | 'cart' | 'login' | 'checkout';
+type Page = 'home' | 'products' | 'product-detail' | 'cart' | 'login' | 'checkout' | 'contact';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -95,6 +96,8 @@ function AppContent() {
             onNavigate={handleNavigate}
           />
         );
+      case 'contact':
+        return <ContactPage />;
       default:
         return null;
     }
@@ -143,7 +146,14 @@ function AppContent() {
               <h3 className="font-semibold mb-4">Atendimento</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>Central de Ajuda</li>
-                <li>Fale Conosco</li>
+                <li>
+                  <button
+                    onClick={() => handleNavigate('contact')}
+                    className="hover:text-white transition-colors"
+                  >
+                    Fale Conosco
+                  </button>
+                </li>
                 <li>Política de Trocas</li>
                 <li>Entrega</li>
               </ul>
