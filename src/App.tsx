@@ -8,10 +8,11 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CartPage } from './pages/CartPage';
 import { LoginPage } from './pages/LoginPage';
 import { CheckoutPage } from './pages/CheckoutPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { products } from './data/products';
 import { Product } from './types';
 
-type Page = 'home' | 'products' | 'product-detail' | 'cart' | 'login' | 'checkout';
+type Page = 'home' | 'products' | 'product-detail' | 'cart' | 'login' | 'checkout' | 'privacy-policy';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -48,7 +49,7 @@ function AppContent() {
   const handleBackNavigation = () => {
     if (currentPage === 'product-detail') {
       setCurrentPage('products');
-    } else if (currentPage === 'cart' || currentPage === 'login' || currentPage === 'checkout') {
+    } else if (currentPage === 'cart' || currentPage === 'login' || currentPage === 'checkout' || currentPage === 'privacy-policy') {
       setCurrentPage('home');
     }
   };
@@ -95,6 +96,8 @@ function AppContent() {
             onNavigate={handleNavigate}
           />
         );
+      case 'privacy-policy':
+        return <PrivacyPolicyPage onBack={handleBackNavigation} />;
       default:
         return null;
     }
@@ -161,6 +164,12 @@ function AppContent() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
             <p>&copy; 2025 PetShop. Todos os direitos reservados.</p>
+            <button
+              onClick={() => handleNavigate('privacy-policy')}
+              className="mt-2 hover:text-white"
+            >
+              Política de Privacidade
+            </button>
           </div>
         </div>
       </footer>
